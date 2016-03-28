@@ -1,0 +1,86 @@
+#billing {
+  border: 1px;
+  border-color: #000000;
+  border-style: solid;
+  margin: 5px
+}
+
+#f1, #f2,#f3, #f4, #f5 {
+  height: 60px;
+  background-color: #BFDCFA;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  line-height: 60px;
+}
+
+#f1, #f2,#f3, #f4 {
+  border-right-style: none;
+}
+
+#f4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#g1, #g2, #g3, #g4, #g5 {
+  height: 60px;
+  background-color: #f0f0f5;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  line-height: 60px;
+}
+
+#g1, #g2,#g3, #g4 {
+  border-right-style: none;
+}
+
+#g4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#delete{
+  height: 30px;
+  width: 80%;
+  line-height: 30px;
+  border: none;
+  color: white;
+  background-color: #3385ff;
+}
+
+#add {
+  height: 30px;
+  width: 80%;
+  line-height: 10px;
+  border: none;
+  color: white;
+  background-color: #3385ff;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #000000;
+  size: 2px;
+}
+
+#i2, #i3{
+  border-color: #000000;
+  border-style: solid;
+  border-width: 1px;
+  height: 230px;
+}
+#i2 {
+  border-right-style: none;
+}
+#i3 {
+  line-height: 230px;
+}
+
+#label_property {
+  margin-top: 15px;
+}

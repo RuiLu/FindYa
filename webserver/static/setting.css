@@ -1,0 +1,30 @@
+#current {
+  height: 500px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+#modify {
+  height: 500px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+#submit {
+  width: 80px;
+  margin: 10px;
+  border: none;
+  color: white;
+  background-color: #3385ff;
+  margin-top: 20px;
+
+}
+
+#label_property {
+  margin-top: 5px;
+  font-size: 15px;
+}

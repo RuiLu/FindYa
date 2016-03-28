@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FindYa</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='jumbotron-narrow.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='grid.css') }}" rel="stylesheet">
+    
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <!-- <ul class="pull-right">  -->
+            <form class="pull-right" action="/signout">
+              <button class="head" id="signout" type="submit">
+                <h5>Sign Out</h5>
+              </button>
+            </form>
+          <!-- </ul> -->
+          
+          <!-- <ul class="pull-right"> -->
+	          <form class="pull-right" action="/main">
+	            <button class="head" id="home" type="submit">
+                <h5>Home</h5>
+              </button>
+            </form>
+          <!-- </ul> -->
+        </nav>
+        <h3 class="text-muted">FindYa</h3>
+      </div>
+
+	    <h1>Current Cart List</h1>
+	<!--  <div>{{data}}</div> -->
+  	  <div>
+        <div class="row" id="column">
+          <div class="col-md-2" id="c1">No.</div>
+          <div class="col-md-3" id="c2">Name</div>
+          <div class="col-md-2" id="c3">Quantity</div>
+          <div class="col-md-3" id="c4">Total Price</div>
+          <div class="col-md-2" id="c5">Operation</div>
+        </div>
+  	    {% for n in data %}
+        <form method="POST" action="/delete_from_cart">
+          <div class="row" id="cart_content">
+            <div class="col-md-2" id="c1">
+              <input type="text" name="goodid" value="{{n[0]}}" size="6" style="background-color:transparent; border:0px" readonly="readonly">
+            </div>
+            <!-- <div class="col-md-1" id="c1">{{n[1]}}</div> -->
+            <div class="col-md-3" id="c2">{{n[1]}}</div>
+            <div class="col-md-2" id="c3">{{n[2]}}</div>
+            <div class="col-md-3" id="c4">{{n[3]}}</div>
+            <div class="col-md-2" id="c5">
+              <button type="submit" id="delete_from_cart">delete</button>
+            </div>
+            <!-- {% for m in n %} -->
+             <!-- <div class="col-md-3">{{m}}</div> -->
+            <!-- {% endfor %} -->
+          </div>
+        </form>
+  	    {% endfor %}
+	    </div>
+	    <h1>Total Price of Current Cart: {{total}}</h1>
+      <hr>
+
+      <!-- <form class="form-signin" method="POST" action="/cart">
+        <h2 class="form-signin-heading">Please fill in the Good ID you want to remove.</h2>
+        {% if error: %} <p class="error" id="warning"><strong>Error:</strong> {{ error }}</p> {% endif %}
+        <label class="sr-only">ID</label><span id="hint">ID *</span>
+        <input type="text" class="form-control" name="goodid" required autofocus>
+ 
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Remove</button>
+      </form>  -->
+      
+	<!-- <p class="Billing Information" id="billinginfo">
+		<div> -->
+	<!--	<div>{{Billinginfo}}</div> -->
+ 		  <div>
+	      <div class="row" id="column">
+  	      <div class="col-md-1" id="d1">No</div>
+          <div class="col-md-3" id="d2">Credit and debit</div>
+          <div class="col-md-3" id="d3">Name on card</div>
+  	      <div class="col-md-5" id="d4">Billling Address</div>
+  	    </div>
+	   
+  		  {% for bill in Billinginfo %}
+    		<div class="row">
+    			<div class="col-md-1" id="d1">{{bill[0]}}</div>
+    			<div class="col-md-3" id="d2">{{bill[1]}}</div>
+          <div class="col-md-3" id="d3">{{bill[2]}}</div>
+          <div class="col-md-5" id="d4">{{bill[3]}}</div>
+    		</div>
+  	    {% endfor %}
+	    </div> 
+      <div class="row" id="select_billing">
+        <div class="col-md-6" id="e1">
+          <h3 class="form-signin-heading">Please choose the billing of this order.</h3>
+          {% if error2: %} <p class="error" id="warning"><strong>Error:</strong> {{ error2 }}</p> {% endif %}
+        </div>
+        <div class="col-md-6" id="e2">
+          <form class="form-signin" method="POST" action="/cart"> 
+            <label class="sr-only">ID</label><span id="hint">Cart ID *</span>
+            <input type="text" class="form-control" name="billingid" id="input_billno" required autofocus>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+ 	    
+
+      <footer class="footer">
+        <p>&copy; 2016 Spring, IDB.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
