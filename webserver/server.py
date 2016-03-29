@@ -32,7 +32,7 @@ app.secret_key = '\xd2\x87\x9c\x19\xd9}\x85\xcf\xb4\xc3\x18\xf3\n\xce\xcb\x8e;}S
 #
 #     DATABASEURI = "postgresql://ewu2493:foobar@w4111db.eastus.cloudapp.azure.com/ewu2493"
 #
-DATABASEURI = "postgresql://rl2784:TYJBWZ@w4111db.eastus.cloudapp.azure.com/rl2784"
+DATABASEURI = "postgresql://rl2784:PASSWORD@w4111db.eastus.cloudapp.azure.com/rl2784"
 
 
 #
